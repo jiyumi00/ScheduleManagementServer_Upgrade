@@ -43,6 +43,9 @@ public class MemberRepository {
         return entityManager.find(Member.class,id);
     }
 
+    public void deleteById(Member member){
+        entityManager.remove(member);
+    }
 
 
 }

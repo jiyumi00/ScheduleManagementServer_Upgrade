@@ -14,12 +14,13 @@ public class Member {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="user_name", nullable = false)
+    @Column(name="user_name", nullable = false, length = 15)
     private String userName;
 
+    @Column(length = 30)
     private String email;
 
-    @Column(name="write_date")
+    @Column(name="write_date", nullable = false)
     private String writeDate;
 
     @Column(name="update_date")
@@ -32,13 +33,11 @@ public class Member {
     protected Member(){
 
     }
-    public static Member createNewMember(String userName,String email,String writeDate, String updateDate){
+    public static Member createNewMember(String userName,String email,String writeDate){
         Member newMember=new Member();
         newMember.userName=userName;
         newMember.email=email;
         newMember.writeDate=writeDate;
-        newMember.updateDate=updateDate;
-
         return newMember;
     }
 

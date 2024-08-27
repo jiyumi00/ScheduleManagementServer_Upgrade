@@ -39,7 +39,11 @@ public class MemberController {
         return memberService.updateMember(id,request);
     }
 
-
+    //회원 삭제
+    @DeleteMapping("/{id}")
+    public DeleteMemberResponse deleteMember(@PathVariable("id") Long id){
+        return memberService.deleteMember(id);
+    }
 
 
 }

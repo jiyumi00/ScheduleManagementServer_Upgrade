@@ -9,6 +9,4 @@ public class CreateMemberRequest {
     private String userName;
     private String email;
     private String writeDate;
-    private String updateDate;
-
 }

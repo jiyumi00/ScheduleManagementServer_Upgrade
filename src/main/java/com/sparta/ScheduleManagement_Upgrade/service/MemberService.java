@@ -23,8 +23,7 @@ public class MemberService {
         Member newMember=Member.createNewMember(
                 data.getUserName(),
                 data.getEmail(),
-                data.getWriteDate(),
-                data.getUpdateDate()
+                data.getWriteDate()
         );
 
         //저장
@@ -101,6 +100,20 @@ public class MemberService {
                 updatedMember.getId()
         );
 
+    }
+
+    @Transactional
+    public DeleteMemberResponse deleteMember(Long id){
+        //회원 조회
+        Member member=memberRepository.findOne(id);
+        if(member!=null){
+            memberRepository.deleteById(member);
+        }
+        return new DeleteMemberResponse(
+                "회원 삭제 성공",
+                200,
+                id
+        );
     }
 
 }
