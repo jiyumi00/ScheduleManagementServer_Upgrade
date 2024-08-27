@@ -39,4 +39,9 @@ public class Member {
 
         return newMember;
     }
+    public void updateMember(String userName,String email,String updateDate){
+        this.userName=userName;
+        this.email=email;
+        this.updateDate=updateDate;
+    }
 }

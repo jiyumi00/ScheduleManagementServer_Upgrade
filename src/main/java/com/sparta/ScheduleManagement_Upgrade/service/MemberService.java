@@ -5,10 +5,13 @@ import com.sparta.ScheduleManagement_Upgrade.domain.Member;
 import com.sparta.ScheduleManagement_Upgrade.dto.member.*;
 import com.sparta.ScheduleManagement_Upgrade.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 
@@ -74,6 +77,28 @@ public class MemberService {
                 200,
                 memberDto
         );
+    }
+
+    @Transactional
+    public UpdateMemberResponse updateMember(Long id,UpdateMemberRequest data){
+        //회원 조회
+        Member member=memberRepository.findOne(id);
+
+        log.info("member.getUserName={}",member.getUserName());
+        member.updateMember(
+                data.getUserName(),
+                data.getEmail(),
+                data.getUpdateDate()
+        );
+
+        Member updatedMember=memberRepository.findOne(id);
+        log.info("updatedMember.getUserName={}",updatedMember.getUserName());
+        return new UpdateMemberResponse(
+                "회원 수정 성공",
+                200,
+                updatedMember.getId()
+        );
+
     }
 
 }

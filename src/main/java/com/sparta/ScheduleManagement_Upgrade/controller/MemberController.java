@@ -1,14 +1,13 @@
 package com.sparta.ScheduleManagement_Upgrade.controller;
 
 
-import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberRequest;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberResponse;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.MemberListResponse;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.MemberResponse;
+import com.sparta.ScheduleManagement_Upgrade.dto.member.*;
 import com.sparta.ScheduleManagement_Upgrade.service.MemberService;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/members")
@@ -34,6 +33,11 @@ public class MemberController {
         return memberService.getMemberById(id);
     }
 
+    //회원 수정
+    @PutMapping("/{id}")
+    public UpdateMemberResponse updateMember(@PathVariable("id") Long id, @RequestBody UpdateMemberRequest request){
+        return memberService.updateMember(id,request);
+    }
 
 
 

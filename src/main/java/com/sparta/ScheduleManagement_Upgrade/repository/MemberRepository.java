@@ -38,4 +38,11 @@ public class MemberRepository {
                 .setParameter("id",id)
                 .getSingleResult();
     }
+
+    public Member findOne(Long id){
+        return entityManager.find(Member.class,id);
+    }
+
+
+
 }
