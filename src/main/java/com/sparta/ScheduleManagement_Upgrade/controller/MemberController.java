@@ -3,6 +3,7 @@ package com.sparta.ScheduleManagement_Upgrade.controller;
 
 import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberRequest;
 import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberResponse;
+import com.sparta.ScheduleManagement_Upgrade.dto.member.MemberListResponse;
 import com.sparta.ScheduleManagement_Upgrade.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,11 @@ public class MemberController {
         return memberService.createMember(request);
     }
 
+    //회원 전체 조회
+    @GetMapping()
+    public MemberListResponse getMemberList(){
+        return memberService.getMemberList();
+    }
 
 
 
