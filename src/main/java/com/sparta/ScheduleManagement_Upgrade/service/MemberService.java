@@ -85,11 +85,13 @@ public class MemberService {
         Member member=memberRepository.findOne(id);
 
         log.info("member.getUserName={}",member.getUserName());
-        member.updateMember(
-                data.getUserName(),
-                data.getEmail(),
-                data.getUpdateDate()
-        );
+        if(data.getUserName()!=null){
+            member.setUserName(data.getUserName());
+        }
+        if(data.getEmail()!=null){
+            member.setEmail(data.getEmail());
+        }
+        member.setUpdateDate(data.getUpdateDate());
 
         Member updatedMember=memberRepository.findOne(id);
         log.info("updatedMember.getUserName={}",updatedMember.getUserName());

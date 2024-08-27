@@ -3,9 +3,11 @@ package com.sparta.ScheduleManagement_Upgrade.domain;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 
 @Entity
 @Getter
+@Setter
 @Table(name="member")
 public class Member {
 
@@ -39,9 +41,5 @@ public class Member {
 
         return newMember;
     }
-    public void updateMember(String userName,String email,String updateDate){
-        this.userName=userName;
-        this.email=email;
-        this.updateDate=updateDate;
-    }
+
 }

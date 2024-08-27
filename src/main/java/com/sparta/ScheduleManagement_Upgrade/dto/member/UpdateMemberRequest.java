@@ -10,6 +10,5 @@ import lombok.RequiredArgsConstructor;
 public class UpdateMemberRequest {
     private String userName;
     private String email;
-    private String writeDate;
     private String updateDate;
 }
