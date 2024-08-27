@@ -30,4 +30,12 @@ public class MemberRepository {
                 .createQuery(jpql,Member.class)
                 .getResultList();
     }
+    //회원 단건 조회
+    public Member findById(Long id){
+        String jpql="SELECT m from Member m where m.id=:id";
+        return entityManager
+                .createQuery(jpql,Member.class)
+                .setParameter("id",id)
+                .getSingleResult();
+    }
 }

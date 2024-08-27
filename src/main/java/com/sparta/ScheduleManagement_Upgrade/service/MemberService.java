@@ -2,10 +2,7 @@ package com.sparta.ScheduleManagement_Upgrade.service;
 
 
 import com.sparta.ScheduleManagement_Upgrade.domain.Member;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberRequest;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.CreateMemberResponse;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.MemberDto;
-import com.sparta.ScheduleManagement_Upgrade.dto.member.MemberListResponse;
+import com.sparta.ScheduleManagement_Upgrade.dto.member.*;
 import com.sparta.ScheduleManagement_Upgrade.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -36,7 +33,10 @@ public class MemberService {
                 savedMember.getId()
         );
     }
+
+
     public MemberListResponse getMemberList(){
+        //전체 조회
         List<Member> foundMemberList=memberRepository.findAll();
 
         //객체 -> DTO
@@ -54,6 +54,25 @@ public class MemberService {
                 200,
                 memberDtoList.size(),
                 memberDtoList
+        );
+    }
+
+    public MemberResponse getMemberById(Long id){
+        //단건 조회
+        Member foundMember=memberRepository.findById(id);
+
+        MemberDto memberDto=new MemberDto(
+                foundMember.getId(),
+                foundMember.getUserName(),
+                foundMember.getEmail(),
+                foundMember.getWriteDate(),
+                foundMember.getUpdateDate()
+        );
+
+        return new MemberResponse(
+                "회원 단건 조회 성공",
+                200,
+                memberDto
         );
     }
 
