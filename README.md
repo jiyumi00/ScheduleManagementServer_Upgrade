@@ -55,16 +55,21 @@ JPA를 활용한 upgrade 일정 관리 앱 서버 만들기
 <br /><br />
 
 ## 📌 API 명세서
+![image](https://github.com/user-attachments/assets/afb7c8c5-63b2-400f-ba42-78cf18742a75)
+
 <br /><br />
+![image](https://github.com/user-attachments/assets/20cd5ace-c40c-4363-ab7e-dceb42c86a04)
 
 
 <br /><br />
+![image](https://github.com/user-attachments/assets/490ede89-d4c4-4c43-97ca-c7c9523d1fe5)
 
 
 
 <br /><br />
 
 ## ⚙️ ERD 설계
+![image](https://github.com/user-attachments/assets/32ed51bb-20d5-4620-b068-304e2459e0d0)
 
 
 
