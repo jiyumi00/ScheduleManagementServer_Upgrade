@@ -4,7 +4,6 @@ import com.sparta.ScheduleManagement_Upgrade.domain.user.dto.response.*;
 import com.sparta.ScheduleManagement_Upgrade.domain.user.entity.User;
 import com.sparta.ScheduleManagement_Upgrade.domain.user.repository.UserRepository;
 import com.sparta.ScheduleManagement_Upgrade.domain.user.dto.request.CreateUserRequest;
-import com.sparta.ScheduleManagement_Upgrade.user.dto.response.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
