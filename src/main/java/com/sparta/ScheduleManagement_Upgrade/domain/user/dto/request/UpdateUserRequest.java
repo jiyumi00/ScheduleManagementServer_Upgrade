@@ -1,16 +1,12 @@
-package com.sparta.ScheduleManagement_Upgrade.dto.member;
-
+package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class MemberDto {
-    private Long id;
+public class UpdateUserRequest {
     private String userName;
     private String email;
-    private String writeDate;
     private String updateDate;
 }

@@ -1,4 +1,4 @@
-package com.sparta.ScheduleManagement_Upgrade.dto.member;
+package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -6,8 +6,8 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class DeleteMemberResponse {
+public class UserResponse {
     private String message;
     private Integer statusCode;
-    private Long memberId;
+    private UserDto userDto;
 }

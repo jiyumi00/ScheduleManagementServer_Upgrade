@@ -1,4 +1,4 @@
-package com.sparta.ScheduleManagement_Upgrade.dto.member;
+package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -8,10 +8,10 @@ import java.util.List;
 
 @Data
 @AllArgsConstructor
-public class MemberListResponse {
+public class UserListResponse {
     private String message;
     private Integer statusCode;
     private Integer count;
-    private List<MemberDto> memberDtoList;
+    private List<UserDto> userDtoList;
 
 }

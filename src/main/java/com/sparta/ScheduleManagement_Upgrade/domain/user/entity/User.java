@@ -1,4 +1,4 @@
-package com.sparta.ScheduleManagement_Upgrade.domain;
+package com.sparta.ScheduleManagement_Upgrade.domain.user.entity;
 
 
 import jakarta.persistence.*;
@@ -8,9 +8,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-@Table(name="member")
-public class Member {
-
+public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -26,19 +24,14 @@ public class Member {
     @Column(name="update_date")
     private String updateDate;
 
-//    public Member(){
-//
-//    }
-
-    protected Member(){
+    protected User(){
 
     }
-    public static Member createNewMember(String userName,String email,String writeDate){
-        Member newMember=new Member();
-        newMember.userName=userName;
-        newMember.email=email;
-        newMember.writeDate=writeDate;
-        return newMember;
+    public static User createNewUser(String userName, String email, String writeDate){
+        User newUser=new User();
+        newUser.userName=userName;
+        newUser.email=email;
+        newUser.writeDate=writeDate;
+        return newUser;
     }
-
 }
