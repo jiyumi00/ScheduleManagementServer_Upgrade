@@ -1,9 +1,9 @@
 package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.request;
 
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Data
+@Getter
 @NoArgsConstructor
 public class CreateUserRequest {
     private String userName;

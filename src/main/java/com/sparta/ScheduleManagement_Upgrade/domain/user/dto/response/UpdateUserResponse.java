@@ -1,9 +1,9 @@
 package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.response;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
-@Data
+@Getter
 @AllArgsConstructor
 public class UpdateUserResponse {
     private String message;

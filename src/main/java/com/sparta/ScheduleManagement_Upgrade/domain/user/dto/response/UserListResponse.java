@@ -2,11 +2,12 @@ package com.sparta.ScheduleManagement_Upgrade.domain.user.dto.response;
 
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 
 import java.util.List;
 
-@Data
+
+@Getter
 @AllArgsConstructor
 public class UserListResponse {
     private String message;

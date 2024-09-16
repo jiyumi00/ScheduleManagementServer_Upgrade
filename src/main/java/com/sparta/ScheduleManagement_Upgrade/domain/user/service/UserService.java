@@ -53,7 +53,7 @@ public class UserService {
                 userDtoList
         );
     }
-    public UserResponse getUserById(Long id){
+    public UserResponse getUser(Long id){
         //단건 조회
         User foundUser=userRepository.findById(id);
         UserDto userDto=new UserDto(

@@ -29,7 +29,7 @@ public class UserController {
     //회원 단건 조회
     @GetMapping("/{id}")
     public UserResponse getUserById(@PathVariable("id") Long id){
-        return userService.getUserById(id);
+        return userService.getUser(id);
     }
     //회원 수정
     @PutMapping("/{id}")

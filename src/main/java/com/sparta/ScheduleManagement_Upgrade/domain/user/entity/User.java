@@ -12,16 +12,15 @@ public class User {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="user_name", nullable = false, length = 15)
+    @Column(nullable = false, length = 15)
     private String userName;
 
-    @Column(length = 30)
+    @Column(length = 30,nullable = false)
     private String email;
 
-    @Column(name="write_date", nullable = false)
+    @Column(nullable = false)
     private String writeDate;
 
-    @Column(name="update_date")
     private String updateDate;
 
     protected User(){
