@@ -1,9 +1,13 @@
 package com.sparta.ScheduleManagement_Upgrade.domain.user.entity;
 
 
+import com.sparta.ScheduleManagement_Upgrade.domain.todo.entity.Todo;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -17,6 +21,9 @@ public class User {
 
     @Column(length = 30,nullable = false)
     private String email;
+
+//    @OneToMany(mappedBy = "todo")
+//    List<Todo> todos=new ArrayList<>();
 
     @Column(nullable = false)
     private String writeDate;

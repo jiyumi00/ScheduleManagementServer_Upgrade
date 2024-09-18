@@ -20,7 +20,6 @@ public class TodoService {
     public CreateTodoResponse createTodo(CreateTodoRequest request) {
         //일정 객체 생성
         Todo newTodo=Todo.createNewTodo(
-                request.getUserName(),
                 request.getTitle(),
                 request.getContents()
         );
@@ -37,13 +36,14 @@ public class TodoService {
 
     public TodoResponse getTodo(Long id) {
         //단건 조회
-        Todo foundTodo=todoRepository.findById(id).orElseThrow(()-> new InvalidRequestStateException("Todo not found"));
+        Todo foundTodo=todoRepository.findById(id).orElseThrow(()-> new NullPointerException("Todo not found"));
 
         TodoDto todoDto=new TodoDto(
                 foundTodo.getId(),
-                foundTodo.getUserName(),
                 foundTodo.getTitle(),
-                foundTodo.getContents()
+                foundTodo.getContents(),
+                foundTodo.getCreateAt(),
+                foundTodo.getUpdateAt()
         );
         return new TodoResponse(
                 "일정 단건 조회 성공",
@@ -55,10 +55,9 @@ public class TodoService {
     @Transactional
     public UpdateTodoResponse updateTodo(Long id, UpdateTodoRequest request) {
         //일정 조회
-        Todo todo=todoRepository.findById(id).orElseThrow(()->new InvalidRequestStateException("Todo not found"));
+        Todo todo=todoRepository.findById(id).orElseThrow(()->new NullPointerException("Todo not found"));
 
-
-        todo.updateTodo(request.getTitle(),request.getContents());
+        todo.updateTodo(request);
 
         return new UpdateTodoResponse(
                 "일정 수정 성공",
@@ -69,7 +68,7 @@ public class TodoService {
 
     public DeleteTodoResponse deleteTodo(Long id) {
         //일정 조회
-        Todo todo=todoRepository.findById(id).orElseThrow(()->new InvalidRequestStateException("Todo not found"));
+        Todo todo=todoRepository.findById(id).orElseThrow(()->new NullPointerException("Todo not found"));
 
         todoRepository.deleteById(id);
 

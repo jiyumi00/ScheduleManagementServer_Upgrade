@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 public class CreateTodoRequest {
-    private String userName;
     private String title;
     private String contents;
 }

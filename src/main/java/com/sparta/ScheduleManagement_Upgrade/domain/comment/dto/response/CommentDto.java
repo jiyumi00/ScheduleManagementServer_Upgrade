@@ -1,4 +1,4 @@
-package com.sparta.ScheduleManagement_Upgrade.domain.todo.dto.response;
+package com.sparta.ScheduleManagement_Upgrade.domain.comment.dto.response;
 
 
 import lombok.AllArgsConstructor;
@@ -8,10 +8,10 @@ import java.time.LocalDateTime;
 
 @Getter
 @AllArgsConstructor
-public class TodoDto {
+public class CommentDto {
     private Long id;
-    private String title;
-    private String todo;
+    private String userName;
+    private String contents;
     private LocalDateTime createAt;
     private LocalDateTime updateAt;
 }
