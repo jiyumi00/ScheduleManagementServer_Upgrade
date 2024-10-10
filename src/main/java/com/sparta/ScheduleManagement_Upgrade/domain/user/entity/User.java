@@ -22,6 +22,10 @@ public class User {
     @Column(length = 30,nullable = false)
     private String email;
 
+    @Column(nullable=false)
+    @Enumerated(value = EnumType.STRING)
+    private UserRoleEnum role;
+
 //    @OneToMany(mappedBy = "todo")
 //    List<Todo> todos=new ArrayList<>();
 

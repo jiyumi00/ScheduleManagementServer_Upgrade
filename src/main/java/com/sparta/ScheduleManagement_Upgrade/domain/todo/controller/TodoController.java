@@ -31,6 +31,8 @@ public class TodoController {
         return todoService.getTodo(id);
     }
 
+    //일정 전체 조회
+
     //일정 수정
     @PutMapping("/{id}")
     public UpdateTodoResponse updateTodo(@PathVariable("id") Long id,@RequestBody UpdateTodoRequest request){
